@@ -1,13 +1,15 @@
-require_relative "lib/robust/version"
+# frozen_string_literal: true
+
+require_relative "lib/robust/metadata"
 require "pathname"
 
 Gem::Specification.new do |spec|
-  spec.name          = "robust"
+  spec.name          = Robust::NAME
   spec.version       = Robust::VERSION
   spec.authors       = ["Jesse B. Hannah"]
   spec.email         = ["jesse@jbhannah.net"]
 
-  spec.summary       = %q{A robust Ruby parser and LSP server.}
+  spec.summary       = Robust::SUMMARY
   spec.homepage      = "https://github.com/jbhannah/robust"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
@@ -24,5 +26,5 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "thor", "~> 1.0.1"
+  spec.add_dependency "optimist", "~> 3.0.1"
 end

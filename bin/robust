@@ -3,4 +3,4 @@
 
 require "robust/cli"
 
-Robust::CLI.start
+Robust::CLI.new

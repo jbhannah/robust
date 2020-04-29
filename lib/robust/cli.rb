@@ -1,19 +1,16 @@
-require "thor"
+# frozen_string_literal: true
+
+require "robust/metadata"
+
+require "optimist"
 
 module Robust
-  class CLI < Thor
-    package_name "Robust"
-
-    class << self
-      def exit_on_failure?
-        true
+  class CLI
+    def initialize
+      @opts = Optimist::options do
+        synopsis Robust::SUMMARY
+        version "#{Robust::NAME} v#{Robust::VERSION}"
       end
-    end
-
-    desc "version", "Print the version of Robust"
-    def version
-      require "robust/version"
-      puts Robust::VERSION
     end
   end
 end
