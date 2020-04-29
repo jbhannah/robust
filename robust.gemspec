@@ -6,8 +6,10 @@ require "pathname"
 Gem::Specification.new do |spec|
   spec.name          = Robust::NAME
   spec.version       = Robust::VERSION
-  spec.authors       = ["Jesse B. Hannah"]
-  spec.email         = ["jesse@jbhannah.net"]
+  spec.authors       = Dir.chdir(File.expand_path('..', __FILE__)) do
+    `git log --format='%aN' -z`.split("\0").uniq
+  end
+  spec.email         = "jesse@jbhannah.net"
 
   spec.summary       = Robust::SUMMARY
   spec.homepage      = "https://github.com/jbhannah/robust"
