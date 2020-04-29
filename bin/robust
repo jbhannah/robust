@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "robust"
+require "robust/cli"
 
-puts Robust::VERSION
+Robust::CLI.start
