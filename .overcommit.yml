@@ -1,0 +1,20 @@
+PreCommit:
+  RuboCop:
+    enabled: true
+    command:
+      - bundle
+      - exec
+      - rubocop
+      - --auto-correct
+      - --fail-level=autocorrect
+    on_warn: fail
+  TrailingWhitespace:
+    enabled: true
+PostCheckout:
+  ALL:
+    quiet: true
+  IndexTags:
+    enabled: true
+PrePush:
+  RSpec:
+    enabled: true
